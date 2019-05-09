@@ -34,3 +34,14 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+
+# Vim
+*.swp
+*.vim
+*.swo
+
+# JetBrains
+.idea/
+Assets/Plugins/Editor.meta
+Assets/Plugins/Editor/
