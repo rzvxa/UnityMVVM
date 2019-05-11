@@ -523,7 +523,7 @@ namespace UnityMVVM.EventSystems.Editor
             foreach (var com in commands)
             {
                 MethodInfo c;
-                if (com.FieldType == typeof(ReactiveCommand))
+                if (com.FieldType == typeof(Reactive.ReactiveCommand))
                     c = com.FieldType.GetMethod("Execute", BindingFlags.Public | BindingFlags.Instance, null,
                         Type.EmptyTypes, null);
                 else
