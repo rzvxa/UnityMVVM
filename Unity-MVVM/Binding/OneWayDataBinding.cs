@@ -108,10 +108,15 @@ namespace UnityMVVM.Binding
 
         protected virtual IEnumerable<BindablePropertyInfo> GetExtraViewModelProperties(PropertyInfo[] props)
         {
-            return props.Where(field => field.PropertyType.IsAssignableToGenericType(typeof(Reactive.ReactiveCommand<>))
-                    && !field.GetCustomAttributes(typeof(ObsoleteAttribute), true)
-                    .Any()
-                    ).Select(e => new BindablePropertyInfo(e.Name, "Can Execute"));
+            return props.Where(p => p.PropertyType.IsAssignableToGenericType(typeof(Reactive.ReactiveCommand<>))
+                                    && !p.GetCustomAttributes(typeof(ObsoleteAttribute), true)
+                                        .Any()
+            ).Select(e => new BindablePropertyInfo(e.Name, "Can Execute")).Concat(props.Where(p =>
+                !p.PropertyType.IsAssignableToGenericType(typeof(Reactive.ReactiveProperty<>))
+                && !p.PropertyType.IsAssignableToGenericType(typeof(Reactive.ReactiveCommand<>))
+                && !p.PropertyType.IsAssignableToGenericType(typeof(Reactive.ReactiveCollection<>))
+                && !p.GetCustomAttributes(typeof(ObsoleteAttribute), true).Any()).Select(e =>
+                new BindablePropertyInfo(e.Name, e.PropertyType.Name, true)));
         }
 
         private void Start()

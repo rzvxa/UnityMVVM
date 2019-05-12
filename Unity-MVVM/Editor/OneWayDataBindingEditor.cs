@@ -4,6 +4,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityMVVM.Binding;
 using Rotorz.Games.Collections;
+using UnityEngine;
 
 namespace UnityMVVM.Editor
 {
@@ -20,7 +21,7 @@ namespace UnityMVVM.Editor
         SerializedProperty _srcProps;
         SerializedProperty _dstProps;
 
-        List<string> _srcPropNames;
+        List<(string, bool)> _srcPropNames;
         List<string> _dstPropNames;
 
         private SerializedProperty _convertersProp;
@@ -34,7 +35,7 @@ namespace UnityMVVM.Editor
             _srcProps = serializedObject.FindProperty("SrcProps");
             _dstProps = serializedObject.FindProperty("DstProps");
 
-            _srcPropNames = _srcProps.GetPropertiesArray();
+            _srcPropNames = _srcProps.GetSrcPropertiesArray();
             _dstPropNames = _dstProps.GetPropertiesArray();
 
             _convertersProp = serializedObject.FindProperty("Converters");
@@ -50,10 +51,26 @@ namespace UnityMVVM.Editor
             base.DrawChangeableElements();
 
             var myClass = target as OneWayDataBinding;
+            var srcGenericMenu = new GenericMenu();
+//            srcGenericMenu.AddItem(new GUIContent("1"),true, () => { });
+            for (var index = 0; index < _srcPropNames.Count; index++)
+            {
+                var (item1, item2) = _srcPropNames[index];
+                var index1 = index;
+                srcGenericMenu.AddItem(new GUIContent((item2 ? "Static/" : "Reactive/") + item1),
+                    index == _srcIndex, () =>
+                    {
+                        _srcIndex = index1;
+                        UpdateSerializedProperties();
+                    });
+            }
 
-
+            var srcBtnContent = new GUIContent(_srcPropNames[_srcIndex].Item1);
             EditorGUILayout.LabelField("Source Property");
-            _srcIndex = EditorGUILayout.Popup(_srcIndex, _srcPropNames.ToArray());
+            var theRect = GUILayoutUtility.GetRect(srcBtnContent, EditorStyles.popup);
+            if (GUI.Button(theRect, srcBtnContent, EditorStyles.popup))
+                srcGenericMenu.DropDown(theRect);
+//            _srcIndex = EditorGUILayout.Popup(_srcIndex, _srcPropNames.ToArray());
 
             EditorGUILayout.LabelField("Destination Property");
             _dstIndex = EditorGUILayout.Popup(_dstIndex, _dstPropNames.ToArray());
@@ -124,6 +141,20 @@ public static class SerializedPropertyExt
             var arrayElementAtIndex = prop.GetArrayElementAtIndex(i);
             list.Add(
                 $"{arrayElementAtIndex.FindPropertyRelative("PropertyName").stringValue}({arrayElementAtIndex.FindPropertyRelative("PropertyType").stringValue})");
+        }
+
+        return list;
+    }
+
+    public static List<(string, bool)> GetSrcPropertiesArray(this SerializedProperty prop)
+    {
+        var list = new List<(string, bool)>();
+        for (int i = 0; i < prop.arraySize; ++i)
+        {
+            var arrayElementAtIndex = prop.GetArrayElementAtIndex(i);
+            list.Add((
+                $"{arrayElementAtIndex.FindPropertyRelative("PropertyName").stringValue}({arrayElementAtIndex.FindPropertyRelative("PropertyType").stringValue})",
+                arrayElementAtIndex.FindPropertyRelative("IsStatic").boolValue));
         }
 
         return list;

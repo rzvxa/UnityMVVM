@@ -24,6 +24,8 @@ namespace UnityMVVM.Examples
         public BoolReactiveProperty Flagger { get; set; } = new BoolReactiveProperty();
         public Reactive.ReactiveCollection<DataModel> TestCollection { get; set; } = new Reactive.ReactiveCollection<DataModel>();
 
+        public string TestStaticString { get; set; } = "Observable Collection Test";
+
         public int Result;
 
         public void Awake()

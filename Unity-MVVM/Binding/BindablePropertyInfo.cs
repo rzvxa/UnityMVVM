@@ -9,7 +9,7 @@ namespace UnityMVVM.Binding
     {
         public string PropertyName;
         public string PropertyType;
-        public object PropertyOwner;
+        public bool IsStatic;
 
         public BindablePropertyInfo()
         {
@@ -20,22 +20,16 @@ namespace UnityMVVM.Binding
             PropertyName = propertyName;
         }
 
-        public BindablePropertyInfo(string propertyName, string propertyType)
+        public BindablePropertyInfo(string propertyName, string propertyType, bool isStatic = false)
         {
             PropertyName = propertyName;
             PropertyType = propertyType;
-        }
-
-        public BindablePropertyInfo(string propertyName, string propertyType, object propertyOwner)
-        {
-            PropertyName = propertyName;
-            PropertyType = propertyType;
-            PropertyOwner = propertyOwner;
+            IsStatic = isStatic;
         }
 
         public BindTarget ToBindTarget(object owner, bool isReactive = false, string path = null,
             UnityEngine.Events.UnityEvent dstChangedEvent = null) =>
-            new BindTarget(owner, PropertyName, path, dstChangedEvent, isReactive,
+            new BindTarget(owner, PropertyName, path, dstChangedEvent, isReactive && !IsStatic,
                 PropertyType.Replace(" ", "").ToLower().Equals("canexecute"));
     }
 }

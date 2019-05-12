@@ -238,67 +238,133 @@ MonoBehaviour:
   SrcProps:
   - PropertyName: State
     PropertyType: ApplicationState
+    IsStatic: 0
   - PropertyName: Text
     PropertyType: String
+    IsStatic: 0
   - PropertyName: BoolProp
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: Color
     PropertyType: Color
+    IsStatic: 0
   - PropertyName: Flagger
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: ChangeColor
     PropertyType: Can Execute
+    IsStatic: 0
+  - PropertyName: IntProp
+    PropertyType: ReactiveProperty`1
+    IsStatic: 1
+  - PropertyName: TestCommand
+    PropertyType: ReactiveCommand`1
+    IsStatic: 1
+  - PropertyName: TestStaticString
+    PropertyType: String
+    IsStatic: 1
+  - PropertyName: useGUILayout
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: runInEditMode
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: enabled
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: isActiveAndEnabled
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: transform
+    PropertyType: Transform
+    IsStatic: 1
+  - PropertyName: gameObject
+    PropertyType: GameObject
+    IsStatic: 1
+  - PropertyName: tag
+    PropertyType: String
+    IsStatic: 1
+  - PropertyName: name
+    PropertyType: String
+    IsStatic: 1
+  - PropertyName: hideFlags
+    PropertyType: HideFlags
+    IsStatic: 1
   DstProps:
   - PropertyName: sprite
     PropertyType: Sprite
+    IsStatic: 0
   - PropertyName: overrideSprite
     PropertyType: Sprite
+    IsStatic: 0
   - PropertyName: type
     PropertyType: Type
+    IsStatic: 0
   - PropertyName: preserveAspect
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: fillCenter
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: fillMethod
     PropertyType: FillMethod
+    IsStatic: 0
   - PropertyName: fillAmount
     PropertyType: Single
+    IsStatic: 0
   - PropertyName: fillClockwise
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: fillOrigin
     PropertyType: Int32
+    IsStatic: 0
   - PropertyName: alphaHitTestMinimumThreshold
     PropertyType: Single
+    IsStatic: 0
   - PropertyName: useSpriteMesh
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: material
     PropertyType: Material
+    IsStatic: 0
   - PropertyName: onCullStateChanged
     PropertyType: CullStateChangedEvent
+    IsStatic: 0
   - PropertyName: maskable
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: color
     PropertyType: Color
+    IsStatic: 0
   - PropertyName: raycastTarget
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: useGUILayout
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: runInEditMode
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: enabled
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: tag
     PropertyType: String
+    IsStatic: 0
   - PropertyName: name
     PropertyType: String
+    IsStatic: 0
   - PropertyName: hideFlags
     PropertyType: HideFlags
+    IsStatic: 0
   SrcPropertyName:
     PropertyName: Color
     PropertyType: ReactiveProperty`1
+    IsStatic: 0
   DstPropertyName:
     PropertyName: color
     PropertyType: Color
+    IsStatic: 0
   _dstView: {fileID: 174998486}
   Converters: []
 --- !u!114 &174998485
@@ -494,6 +560,7 @@ GameObject:
   - component: {fileID: 322895374}
   - component: {fileID: 322895376}
   - component: {fileID: 322895375}
+  - component: {fileID: 322895377}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -553,7 +620,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Observable Collection Test
+  m_Text: Static data binding
 --- !u!222 &322895376
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -562,6 +629,158 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 322895373}
   m_CullTransparentMesh: 0
+--- !u!114 &322895377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322895373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7708fc3a686358d4da40d71b8a782bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _viewModel: {fileID: 0}
+  ViewModelName: UnityMVVM.Examples.ReactiveViewModel
+  SrcProps:
+  - PropertyName: State
+    PropertyType: ApplicationState
+    IsStatic: 0
+  - PropertyName: Text
+    PropertyType: String
+    IsStatic: 0
+  - PropertyName: BoolProp
+    PropertyType: Boolean
+    IsStatic: 0
+  - PropertyName: Color
+    PropertyType: Color
+    IsStatic: 0
+  - PropertyName: Flagger
+    PropertyType: Boolean
+    IsStatic: 0
+  - PropertyName: ChangeColor
+    PropertyType: Can Execute
+    IsStatic: 0
+  - PropertyName: IntProp
+    PropertyType: ReactiveProperty`1
+    IsStatic: 1
+  - PropertyName: TestCommand
+    PropertyType: ReactiveCommand`1
+    IsStatic: 1
+  - PropertyName: TestStaticString
+    PropertyType: String
+    IsStatic: 1
+  - PropertyName: useGUILayout
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: runInEditMode
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: enabled
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: isActiveAndEnabled
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: transform
+    PropertyType: Transform
+    IsStatic: 1
+  - PropertyName: gameObject
+    PropertyType: GameObject
+    IsStatic: 1
+  - PropertyName: tag
+    PropertyType: String
+    IsStatic: 1
+  - PropertyName: name
+    PropertyType: String
+    IsStatic: 1
+  - PropertyName: hideFlags
+    PropertyType: HideFlags
+    IsStatic: 1
+  DstProps:
+  - PropertyName: font
+    PropertyType: Font
+    IsStatic: 0
+  - PropertyName: text
+    PropertyType: String
+    IsStatic: 0
+  - PropertyName: supportRichText
+    PropertyType: Boolean
+    IsStatic: 0
+  - PropertyName: resizeTextForBestFit
+    PropertyType: Boolean
+    IsStatic: 0
+  - PropertyName: resizeTextMinSize
+    PropertyType: Int32
+    IsStatic: 0
+  - PropertyName: resizeTextMaxSize
+    PropertyType: Int32
+    IsStatic: 0
+  - PropertyName: alignment
+    PropertyType: TextAnchor
+    IsStatic: 0
+  - PropertyName: alignByGeometry
+    PropertyType: Boolean
+    IsStatic: 0
+  - PropertyName: fontSize
+    PropertyType: Int32
+    IsStatic: 0
+  - PropertyName: horizontalOverflow
+    PropertyType: HorizontalWrapMode
+    IsStatic: 0
+  - PropertyName: verticalOverflow
+    PropertyType: VerticalWrapMode
+    IsStatic: 0
+  - PropertyName: lineSpacing
+    PropertyType: Single
+    IsStatic: 0
+  - PropertyName: fontStyle
+    PropertyType: FontStyle
+    IsStatic: 0
+  - PropertyName: onCullStateChanged
+    PropertyType: CullStateChangedEvent
+    IsStatic: 0
+  - PropertyName: maskable
+    PropertyType: Boolean
+    IsStatic: 0
+  - PropertyName: color
+    PropertyType: Color
+    IsStatic: 0
+  - PropertyName: raycastTarget
+    PropertyType: Boolean
+    IsStatic: 0
+  - PropertyName: material
+    PropertyType: Material
+    IsStatic: 0
+  - PropertyName: useGUILayout
+    PropertyType: Boolean
+    IsStatic: 0
+  - PropertyName: runInEditMode
+    PropertyType: Boolean
+    IsStatic: 0
+  - PropertyName: enabled
+    PropertyType: Boolean
+    IsStatic: 0
+  - PropertyName: tag
+    PropertyType: String
+    IsStatic: 0
+  - PropertyName: name
+    PropertyType: String
+    IsStatic: 0
+  - PropertyName: hideFlags
+    PropertyType: HideFlags
+    IsStatic: 0
+  SrcPropertyName:
+    PropertyName: TestStaticString
+    PropertyType: String
+    IsStatic: 1
+  DstPropertyName:
+    PropertyName: text
+    PropertyType: String
+    IsStatic: 0
+  _dstView: {fileID: 322895375}
+  Converters: []
 --- !u!1 &458916784
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,87 +951,127 @@ MonoBehaviour:
   SrcProps:
   - PropertyName: Text
     PropertyType: String
+    IsStatic: 0
   DstProps:
   - PropertyName: shouldHideMobileInput
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: text
     PropertyType: String
+    IsStatic: 0
   - PropertyName: caretBlinkRate
     PropertyType: Single
+    IsStatic: 0
   - PropertyName: caretWidth
     PropertyType: Int32
+    IsStatic: 0
   - PropertyName: textComponent
     PropertyType: Text
+    IsStatic: 0
   - PropertyName: placeholder
     PropertyType: Graphic
+    IsStatic: 0
   - PropertyName: caretColor
     PropertyType: Color
+    IsStatic: 0
   - PropertyName: customCaretColor
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: selectionColor
     PropertyType: Color
+    IsStatic: 0
   - PropertyName: onEndEdit
     PropertyType: SubmitEvent
+    IsStatic: 0
   - PropertyName: onValueChanged
     PropertyType: OnChangeEvent
+    IsStatic: 0
   - PropertyName: onValidateInput
     PropertyType: OnValidateInput
+    IsStatic: 0
   - PropertyName: characterLimit
     PropertyType: Int32
+    IsStatic: 0
   - PropertyName: contentType
     PropertyType: ContentType
+    IsStatic: 0
   - PropertyName: lineType
     PropertyType: LineType
+    IsStatic: 0
   - PropertyName: inputType
     PropertyType: InputType
+    IsStatic: 0
   - PropertyName: keyboardType
     PropertyType: TouchScreenKeyboardType
+    IsStatic: 0
   - PropertyName: characterValidation
     PropertyType: CharacterValidation
+    IsStatic: 0
   - PropertyName: readOnly
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: asteriskChar
     PropertyType: Char
+    IsStatic: 0
   - PropertyName: caretPosition
     PropertyType: Int32
+    IsStatic: 0
   - PropertyName: selectionAnchorPosition
     PropertyType: Int32
+    IsStatic: 0
   - PropertyName: selectionFocusPosition
     PropertyType: Int32
+    IsStatic: 0
   - PropertyName: navigation
     PropertyType: Navigation
+    IsStatic: 0
   - PropertyName: transition
     PropertyType: Transition
+    IsStatic: 0
   - PropertyName: colors
     PropertyType: ColorBlock
+    IsStatic: 0
   - PropertyName: spriteState
     PropertyType: SpriteState
+    IsStatic: 0
   - PropertyName: animationTriggers
     PropertyType: AnimationTriggers
+    IsStatic: 0
   - PropertyName: targetGraphic
     PropertyType: Graphic
+    IsStatic: 0
   - PropertyName: interactable
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: image
     PropertyType: Image
+    IsStatic: 0
   - PropertyName: useGUILayout
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: runInEditMode
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: enabled
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: tag
     PropertyType: String
+    IsStatic: 0
   - PropertyName: name
     PropertyType: String
+    IsStatic: 0
   - PropertyName: hideFlags
     PropertyType: HideFlags
+    IsStatic: 0
   SrcPropertyName:
     PropertyName: Text
     PropertyType: String
+    IsStatic: 0
   DstPropertyName:
     PropertyName: text
     PropertyType: String
+    IsStatic: 0
   _dstView: {fileID: 458916786}
   Converters: []
   _dstChangedEventName: onValueChanged
@@ -1196,67 +1455,133 @@ MonoBehaviour:
   SrcProps:
   - PropertyName: State
     PropertyType: ApplicationState
+    IsStatic: 0
   - PropertyName: Text
     PropertyType: String
+    IsStatic: 0
   - PropertyName: BoolProp
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: Color
     PropertyType: Color
+    IsStatic: 0
   - PropertyName: Flagger
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: ChangeColor
     PropertyType: Can Execute
+    IsStatic: 0
+  - PropertyName: IntProp
+    PropertyType: ReactiveProperty`1
+    IsStatic: 1
+  - PropertyName: TestCommand
+    PropertyType: ReactiveCommand`1
+    IsStatic: 1
+  - PropertyName: TestStaticString
+    PropertyType: String
+    IsStatic: 1
+  - PropertyName: useGUILayout
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: runInEditMode
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: enabled
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: isActiveAndEnabled
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: transform
+    PropertyType: Transform
+    IsStatic: 1
+  - PropertyName: gameObject
+    PropertyType: GameObject
+    IsStatic: 1
+  - PropertyName: tag
+    PropertyType: String
+    IsStatic: 1
+  - PropertyName: name
+    PropertyType: String
+    IsStatic: 1
+  - PropertyName: hideFlags
+    PropertyType: HideFlags
+    IsStatic: 1
   DstProps:
   - PropertyName: sprite
     PropertyType: Sprite
+    IsStatic: 0
   - PropertyName: overrideSprite
     PropertyType: Sprite
+    IsStatic: 0
   - PropertyName: type
     PropertyType: Type
+    IsStatic: 0
   - PropertyName: preserveAspect
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: fillCenter
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: fillMethod
     PropertyType: FillMethod
+    IsStatic: 0
   - PropertyName: fillAmount
     PropertyType: Single
+    IsStatic: 0
   - PropertyName: fillClockwise
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: fillOrigin
     PropertyType: Int32
+    IsStatic: 0
   - PropertyName: alphaHitTestMinimumThreshold
     PropertyType: Single
+    IsStatic: 0
   - PropertyName: useSpriteMesh
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: material
     PropertyType: Material
+    IsStatic: 0
   - PropertyName: onCullStateChanged
     PropertyType: CullStateChangedEvent
+    IsStatic: 0
   - PropertyName: maskable
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: color
     PropertyType: Color
+    IsStatic: 0
   - PropertyName: raycastTarget
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: useGUILayout
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: runInEditMode
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: enabled
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: tag
     PropertyType: String
+    IsStatic: 0
   - PropertyName: name
     PropertyType: String
+    IsStatic: 0
   - PropertyName: hideFlags
     PropertyType: HideFlags
+    IsStatic: 0
   SrcPropertyName:
     PropertyName: Color
     PropertyType: Color
+    IsStatic: 0
   DstPropertyName:
     PropertyName: color
     PropertyType: Color
+    IsStatic: 0
   _dstView: {fileID: 691889571}
   Converters: []
 --- !u!114 &691889569
@@ -1519,71 +1844,139 @@ MonoBehaviour:
   SrcProps:
   - PropertyName: State
     PropertyType: ApplicationState
+    IsStatic: 0
   - PropertyName: Text
     PropertyType: String
+    IsStatic: 0
   - PropertyName: BoolProp
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: Color
     PropertyType: Color
+    IsStatic: 0
   - PropertyName: Flagger
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: ChangeColor
     PropertyType: Can Execute
+    IsStatic: 0
+  - PropertyName: IntProp
+    PropertyType: ReactiveProperty`1
+    IsStatic: 1
+  - PropertyName: TestCommand
+    PropertyType: ReactiveCommand`1
+    IsStatic: 1
+  - PropertyName: TestStaticString
+    PropertyType: String
+    IsStatic: 1
+  - PropertyName: useGUILayout
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: runInEditMode
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: enabled
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: isActiveAndEnabled
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: transform
+    PropertyType: Transform
+    IsStatic: 1
+  - PropertyName: gameObject
+    PropertyType: GameObject
+    IsStatic: 1
+  - PropertyName: tag
+    PropertyType: String
+    IsStatic: 1
+  - PropertyName: name
+    PropertyType: String
+    IsStatic: 1
+  - PropertyName: hideFlags
+    PropertyType: HideFlags
+    IsStatic: 1
   DstProps:
   - PropertyName: font
     PropertyType: Font
+    IsStatic: 0
   - PropertyName: text
     PropertyType: String
+    IsStatic: 0
   - PropertyName: supportRichText
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: resizeTextForBestFit
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: resizeTextMinSize
     PropertyType: Int32
+    IsStatic: 0
   - PropertyName: resizeTextMaxSize
     PropertyType: Int32
+    IsStatic: 0
   - PropertyName: alignment
     PropertyType: TextAnchor
+    IsStatic: 0
   - PropertyName: alignByGeometry
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: fontSize
     PropertyType: Int32
+    IsStatic: 0
   - PropertyName: horizontalOverflow
     PropertyType: HorizontalWrapMode
+    IsStatic: 0
   - PropertyName: verticalOverflow
     PropertyType: VerticalWrapMode
+    IsStatic: 0
   - PropertyName: lineSpacing
     PropertyType: Single
+    IsStatic: 0
   - PropertyName: fontStyle
     PropertyType: FontStyle
+    IsStatic: 0
   - PropertyName: onCullStateChanged
     PropertyType: CullStateChangedEvent
+    IsStatic: 0
   - PropertyName: maskable
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: color
     PropertyType: Color
+    IsStatic: 0
   - PropertyName: raycastTarget
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: material
     PropertyType: Material
+    IsStatic: 0
   - PropertyName: useGUILayout
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: runInEditMode
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: enabled
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: tag
     PropertyType: String
+    IsStatic: 0
   - PropertyName: name
     PropertyType: String
+    IsStatic: 0
   - PropertyName: hideFlags
     PropertyType: HideFlags
+    IsStatic: 0
   SrcPropertyName:
     PropertyName: Color
     PropertyType: ReactiveProperty`1
+    IsStatic: 0
   DstPropertyName:
     PropertyName: text
     PropertyType: String
+    IsStatic: 0
   _dstView: {fileID: 1270270532}
   Converters:
   - {fileID: 1270270530}
@@ -1660,71 +2053,139 @@ MonoBehaviour:
   SrcProps:
   - PropertyName: State
     PropertyType: ApplicationState
+    IsStatic: 0
   - PropertyName: Text
     PropertyType: String
+    IsStatic: 0
   - PropertyName: BoolProp
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: Color
     PropertyType: Color
+    IsStatic: 0
   - PropertyName: Flagger
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: ChangeColor
     PropertyType: Can Execute
+    IsStatic: 0
+  - PropertyName: IntProp
+    PropertyType: ReactiveProperty`1
+    IsStatic: 1
+  - PropertyName: TestCommand
+    PropertyType: ReactiveCommand`1
+    IsStatic: 1
+  - PropertyName: TestStaticString
+    PropertyType: String
+    IsStatic: 1
+  - PropertyName: useGUILayout
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: runInEditMode
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: enabled
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: isActiveAndEnabled
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: transform
+    PropertyType: Transform
+    IsStatic: 1
+  - PropertyName: gameObject
+    PropertyType: GameObject
+    IsStatic: 1
+  - PropertyName: tag
+    PropertyType: String
+    IsStatic: 1
+  - PropertyName: name
+    PropertyType: String
+    IsStatic: 1
+  - PropertyName: hideFlags
+    PropertyType: HideFlags
+    IsStatic: 1
   DstProps:
   - PropertyName: font
     PropertyType: Font
+    IsStatic: 0
   - PropertyName: text
     PropertyType: String
+    IsStatic: 0
   - PropertyName: supportRichText
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: resizeTextForBestFit
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: resizeTextMinSize
     PropertyType: Int32
+    IsStatic: 0
   - PropertyName: resizeTextMaxSize
     PropertyType: Int32
+    IsStatic: 0
   - PropertyName: alignment
     PropertyType: TextAnchor
+    IsStatic: 0
   - PropertyName: alignByGeometry
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: fontSize
     PropertyType: Int32
+    IsStatic: 0
   - PropertyName: horizontalOverflow
     PropertyType: HorizontalWrapMode
+    IsStatic: 0
   - PropertyName: verticalOverflow
     PropertyType: VerticalWrapMode
+    IsStatic: 0
   - PropertyName: lineSpacing
     PropertyType: Single
+    IsStatic: 0
   - PropertyName: fontStyle
     PropertyType: FontStyle
+    IsStatic: 0
   - PropertyName: onCullStateChanged
     PropertyType: CullStateChangedEvent
+    IsStatic: 0
   - PropertyName: maskable
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: color
     PropertyType: Color
+    IsStatic: 0
   - PropertyName: raycastTarget
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: material
     PropertyType: Material
+    IsStatic: 0
   - PropertyName: useGUILayout
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: runInEditMode
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: enabled
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: tag
     PropertyType: String
+    IsStatic: 0
   - PropertyName: name
     PropertyType: String
+    IsStatic: 0
   - PropertyName: hideFlags
     PropertyType: HideFlags
+    IsStatic: 0
   SrcPropertyName:
     PropertyName: BoolProp
     PropertyType: Boolean
+    IsStatic: 0
   DstPropertyName:
     PropertyName: color
     PropertyType: Color
+    IsStatic: 0
   _dstView: {fileID: 1270270532}
   Converters:
   - {fileID: 1270270534}
@@ -1802,71 +2263,139 @@ MonoBehaviour:
   SrcProps:
   - PropertyName: State
     PropertyType: ApplicationState
+    IsStatic: 0
   - PropertyName: Text
     PropertyType: String
+    IsStatic: 0
   - PropertyName: BoolProp
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: Color
     PropertyType: Color
+    IsStatic: 0
   - PropertyName: Flagger
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: ChangeColor
     PropertyType: Can Execute
+    IsStatic: 0
+  - PropertyName: IntProp
+    PropertyType: ReactiveProperty`1
+    IsStatic: 1
+  - PropertyName: TestCommand
+    PropertyType: ReactiveCommand`1
+    IsStatic: 1
+  - PropertyName: TestStaticString
+    PropertyType: String
+    IsStatic: 1
+  - PropertyName: useGUILayout
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: runInEditMode
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: enabled
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: isActiveAndEnabled
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: transform
+    PropertyType: Transform
+    IsStatic: 1
+  - PropertyName: gameObject
+    PropertyType: GameObject
+    IsStatic: 1
+  - PropertyName: tag
+    PropertyType: String
+    IsStatic: 1
+  - PropertyName: name
+    PropertyType: String
+    IsStatic: 1
+  - PropertyName: hideFlags
+    PropertyType: HideFlags
+    IsStatic: 1
   DstProps:
   - PropertyName: font
     PropertyType: Font
+    IsStatic: 0
   - PropertyName: text
     PropertyType: String
+    IsStatic: 0
   - PropertyName: supportRichText
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: resizeTextForBestFit
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: resizeTextMinSize
     PropertyType: Int32
+    IsStatic: 0
   - PropertyName: resizeTextMaxSize
     PropertyType: Int32
+    IsStatic: 0
   - PropertyName: alignment
     PropertyType: TextAnchor
+    IsStatic: 0
   - PropertyName: alignByGeometry
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: fontSize
     PropertyType: Int32
+    IsStatic: 0
   - PropertyName: horizontalOverflow
     PropertyType: HorizontalWrapMode
+    IsStatic: 0
   - PropertyName: verticalOverflow
     PropertyType: VerticalWrapMode
+    IsStatic: 0
   - PropertyName: lineSpacing
     PropertyType: Single
+    IsStatic: 0
   - PropertyName: fontStyle
     PropertyType: FontStyle
+    IsStatic: 0
   - PropertyName: onCullStateChanged
     PropertyType: CullStateChangedEvent
+    IsStatic: 0
   - PropertyName: maskable
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: color
     PropertyType: Color
+    IsStatic: 0
   - PropertyName: raycastTarget
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: material
     PropertyType: Material
+    IsStatic: 0
   - PropertyName: useGUILayout
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: runInEditMode
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: enabled
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: tag
     PropertyType: String
+    IsStatic: 0
   - PropertyName: name
     PropertyType: String
+    IsStatic: 0
   - PropertyName: hideFlags
     PropertyType: HideFlags
+    IsStatic: 0
   SrcPropertyName:
     PropertyName: BoolProp
     PropertyType: Boolean
+    IsStatic: 0
   DstPropertyName:
     PropertyName: text
     PropertyType: String
+    IsStatic: 0
   _dstView: {fileID: 538402078}
   Converters:
   - {fileID: 1383601609}
@@ -1979,67 +2508,133 @@ MonoBehaviour:
   SrcProps:
   - PropertyName: State
     PropertyType: ApplicationState
+    IsStatic: 0
   - PropertyName: Text
     PropertyType: String
+    IsStatic: 0
   - PropertyName: BoolProp
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: Color
     PropertyType: Color
+    IsStatic: 0
   - PropertyName: Flagger
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: ChangeColor
     PropertyType: Can Execute
+    IsStatic: 0
+  - PropertyName: IntProp
+    PropertyType: ReactiveProperty`1
+    IsStatic: 1
+  - PropertyName: TestCommand
+    PropertyType: ReactiveCommand`1
+    IsStatic: 1
+  - PropertyName: TestStaticString
+    PropertyType: String
+    IsStatic: 1
+  - PropertyName: useGUILayout
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: runInEditMode
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: enabled
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: isActiveAndEnabled
+    PropertyType: Boolean
+    IsStatic: 1
+  - PropertyName: transform
+    PropertyType: Transform
+    IsStatic: 1
+  - PropertyName: gameObject
+    PropertyType: GameObject
+    IsStatic: 1
+  - PropertyName: tag
+    PropertyType: String
+    IsStatic: 1
+  - PropertyName: name
+    PropertyType: String
+    IsStatic: 1
+  - PropertyName: hideFlags
+    PropertyType: HideFlags
+    IsStatic: 1
   DstProps:
   - PropertyName: sprite
     PropertyType: Sprite
+    IsStatic: 0
   - PropertyName: overrideSprite
     PropertyType: Sprite
+    IsStatic: 0
   - PropertyName: type
     PropertyType: Type
+    IsStatic: 0
   - PropertyName: preserveAspect
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: fillCenter
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: fillMethod
     PropertyType: FillMethod
+    IsStatic: 0
   - PropertyName: fillAmount
     PropertyType: Single
+    IsStatic: 0
   - PropertyName: fillClockwise
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: fillOrigin
     PropertyType: Int32
+    IsStatic: 0
   - PropertyName: alphaHitTestMinimumThreshold
     PropertyType: Single
+    IsStatic: 0
   - PropertyName: useSpriteMesh
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: material
     PropertyType: Material
+    IsStatic: 0
   - PropertyName: onCullStateChanged
     PropertyType: CullStateChangedEvent
+    IsStatic: 0
   - PropertyName: maskable
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: color
     PropertyType: Color
+    IsStatic: 0
   - PropertyName: raycastTarget
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: useGUILayout
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: runInEditMode
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: enabled
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: tag
     PropertyType: String
+    IsStatic: 0
   - PropertyName: name
     PropertyType: String
+    IsStatic: 0
   - PropertyName: hideFlags
     PropertyType: HideFlags
+    IsStatic: 0
   SrcPropertyName:
     PropertyName: BoolProp
     PropertyType: Boolean
+    IsStatic: 0
   DstPropertyName:
     PropertyName: color
     PropertyType: Color
+    IsStatic: 0
   _dstView: {fileID: 1383601613}
   Converters:
   - {fileID: 1383601609}
@@ -2209,37 +2804,52 @@ MonoBehaviour:
   SrcProps:
   - PropertyName: State
     PropertyType: ApplicationState
+    IsStatic: 0
   - PropertyName: Text
     PropertyType: String
+    IsStatic: 0
   - PropertyName: BoolProp
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: Color
     PropertyType: Color
+    IsStatic: 0
   - PropertyName: Flagger
     PropertyType: Boolean
+    IsStatic: 0
   DstProps:
   - PropertyName: ElementVisibility
     PropertyType: Visibility
+    IsStatic: 0
   - PropertyName: Alpha
     PropertyType: Single
+    IsStatic: 0
   - PropertyName: useGUILayout
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: runInEditMode
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: enabled
     PropertyType: Boolean
+    IsStatic: 0
   - PropertyName: tag
     PropertyType: String
+    IsStatic: 0
   - PropertyName: name
     PropertyType: String
+    IsStatic: 0
   - PropertyName: hideFlags
     PropertyType: HideFlags
+    IsStatic: 0
   SrcPropertyName:
     PropertyName: State
     PropertyType: ApplicationState
+    IsStatic: 0
   DstPropertyName:
     PropertyName: ElementVisibility
     PropertyType: Visibility
+    IsStatic: 0
   _dstView: {fileID: 1630440238}
   Converters:
   - {fileID: 1630440233}
@@ -2553,6 +3163,7 @@ MonoBehaviour:
   SrcCollectionName:
     PropertyName: TestCollection
     PropertyType: DataModel
+    IsStatic: 0
   SelectedItemPropName: 
 --- !u!114 &1755598735
 MonoBehaviour:
