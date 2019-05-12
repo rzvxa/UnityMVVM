@@ -88,14 +88,23 @@ namespace UnityMVVM.Binding
             if (!string.IsNullOrEmpty(ViewModelName))
             {
                 var props = ViewModelProvider.GetViewModelProperties(ViewModelName);
-                SrcProps = props.Where(prop =>
-                        prop.PropertyType.IsAssignableToGenericType(typeof(Reactive.ReactiveProperty<>))
-                        && !prop.GetCustomAttributes(typeof(ObsoleteAttribute), true)
-                            .Any())
-                    .Select(e => new BindablePropertyInfo(e.Name, e.PropertyType.IsGenericType ? e.PropertyType.GetGenericArguments()[0].Name : e.PropertyType.BaseType.GetGenericArguments()[0].Name)).ToList();
+//                SrcProps = props.Where(prop =>
+//                        prop.PropertyType.IsAssignableToGenericType(typeof(Reactive.ReactiveProperty<>))
+//                        && !prop.GetCustomAttributes(typeof(ObsoleteAttribute), true)
+//                            .Any())
+                SrcProps = SrcPropsSearch(props).Select(e => new BindablePropertyInfo(e.Name,
+                    e.PropertyType.IsGenericType
+                        ? e.PropertyType.GetGenericArguments()[0].Name
+                        : e.PropertyType.BaseType.GetGenericArguments()[0].Name)).ToList();
                 SrcProps.AddRange(GetExtraViewModelProperties(props));
             }
         }
+
+        public virtual IEnumerable<PropertyInfo> SrcPropsSearch(IEnumerable<PropertyInfo> props) =>
+            props.Where(prop =>
+                prop.PropertyType.IsAssignableToGenericType(typeof(Reactive.ReactiveProperty<>))
+                && !prop.GetCustomAttributes(typeof(ObsoleteAttribute), true)
+                    .Any());
 
         protected virtual IEnumerable<BindablePropertyInfo> GetExtraViewModelProperties(PropertyInfo[] props)
         {

@@ -14,13 +14,13 @@ namespace UnityMVVM.Examples
     public class ReactiveViewModel : ViewModelBase
     {
         public Reactive.ReactiveProperty<ApplicationState> State { get; set; } = new Reactive.ReactiveProperty<ApplicationState>();
-        public UniRx.ReactiveProperty<int> IntProp { get; set; }  = new UniRx.ReactiveProperty<int>(10);
-//        [TwoWayBindable]
+        public UniRx.ReactiveProperty<int> IntProp { get; set; } = new UniRx.ReactiveProperty<int>(10);
+        [TwoWayBindable]
         public StringReactiveProperty Text { get; set; } = new StringReactiveProperty();
         public BoolReactiveProperty BoolProp { get; set; } = new BoolReactiveProperty();
         public ColorReactiveProperty Color { get; set; } = new ColorReactiveProperty();
         public UniRx.ReactiveCommand<int> TestCommand { get; set; }
-        public Reactive.ReactiveCommand ChangeColor;
+        public Reactive.ReactiveCommand ChangeColor { get; set; }
         public BoolReactiveProperty Flagger { get; set; } = new BoolReactiveProperty();
         public Reactive.ReactiveCollection<DataModel> TestCollection { get; set; } = new Reactive.ReactiveCollection<DataModel>();
 
@@ -42,7 +42,7 @@ namespace UnityMVVM.Examples
         {
             Text.Value = DateTime.Now.ToShortTimeString();
             StartCoroutine(ChangeRoutine());
-//            TestCollection.ObserveAdd().Subscribe(e => Debug.Log(e)); ;
+            //            TestCollection.ObserveAdd().Subscribe(e => Debug.Log(e)); ;
         }
 
         public void Update()
@@ -62,7 +62,7 @@ namespace UnityMVVM.Examples
                     TestCollection.RemoveAt(Random.Range(0, TestCollection.Count - 1));
                 for (var i = 0; i < 2; i++)
                     TestCollection.Add(new DataModel
-                        {message = Random.Range(0, 1000).ToString(), color = Random.ColorHSV()});
+                    { message = Random.Range(0, 1000).ToString(), color = Random.ColorHSV() });
                 yield return new WaitForSeconds(3f);
             }
         }

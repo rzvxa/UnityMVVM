@@ -77,5 +77,7 @@ namespace UnityMVVM.Binding
                                         .Select(p => p.Name).ToList();
             }
         }
+
+        public override IEnumerable<PropertyInfo> SrcPropsSearch(IEnumerable<PropertyInfo> props) => base.SrcPropsSearch(props).Where(p => Attribute.IsDefined(p, typeof(TwoWayBindable)));
     }
 }
