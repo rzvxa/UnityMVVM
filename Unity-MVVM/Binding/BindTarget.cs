@@ -31,12 +31,12 @@ namespace UnityMVVM.Binding
         {
             if (isReactive)
             {
-                    propertyOwner = propOwner.GetType().GetField(propName).GetValue(propOwner);
+                    propertyOwner = propOwner.GetType().GetProperty(propName).GetValue(propOwner);
                     if (isCommand)
                     {
                         _command = propertyOwner;
                         propertyOwner = propertyOwner.GetType()
-                            .GetFieldRecursive("canExecute", BindingFlags.Instance | BindingFlags.NonPublic)
+                            .GetPropertyRecursive("canExecute", BindingFlags.Instance | BindingFlags.NonPublic)
                             .GetValue(propertyOwner);
                     }
 

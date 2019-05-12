@@ -13,15 +13,16 @@ namespace UnityMVVM.Examples
 {
     public class ReactiveViewModel : ViewModelBase
     {
-        public Reactive.ReactiveProperty<ApplicationState> State = new Reactive.ReactiveProperty<ApplicationState>();
-        public UniRx.ReactiveProperty<int> IntProp = new UniRx.ReactiveProperty<int>(10);
-        public StringReactiveProperty Text = new StringReactiveProperty();
-        public BoolReactiveProperty BoolProp = new BoolReactiveProperty();
-        public ColorReactiveProperty Color = new ColorReactiveProperty();
-        public UniRx.ReactiveCommand<int> TestCommand;
+        public Reactive.ReactiveProperty<ApplicationState> State { get; set; } = new Reactive.ReactiveProperty<ApplicationState>();
+        public UniRx.ReactiveProperty<int> IntProp { get; set; }  = new UniRx.ReactiveProperty<int>(10);
+//        [TwoWayBindable]
+        public StringReactiveProperty Text { get; set; } = new StringReactiveProperty();
+        public BoolReactiveProperty BoolProp { get; set; } = new BoolReactiveProperty();
+        public ColorReactiveProperty Color { get; set; } = new ColorReactiveProperty();
+        public UniRx.ReactiveCommand<int> TestCommand { get; set; }
         public Reactive.ReactiveCommand ChangeColor;
-        public BoolReactiveProperty Flagger = new BoolReactiveProperty();
-        public Reactive.ReactiveCollection<DataModel> TestCollection = new Reactive.ReactiveCollection<DataModel>();
+        public BoolReactiveProperty Flagger { get; set; } = new BoolReactiveProperty();
+        public Reactive.ReactiveCollection<DataModel> TestCollection { get; set; } = new Reactive.ReactiveCollection<DataModel>();
 
         public int Result;
 

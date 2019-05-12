@@ -517,17 +517,17 @@ namespace UnityMVVM.EventSystems.Editor
             var validMethodMapList = new List<ValidMethodMap>();
             if(string.IsNullOrEmpty(target) || t == null) return validMethodMapList;
             var type = Util.ViewModelProvider.GetViewModelType(target);
-            var commands = type.GetFields().Where(x => x.FieldType.GetInterfaces().Any(i =>
+            var commands = type.GetProperties().Where(x => x.PropertyType.GetInterfaces().Any(i =>
                 i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IReactiveCommand<>)))
                 /* .Select(c => c.FieldType.GetMethod("Execute")) */.ToArray();
             foreach (var com in commands)
             {
                 MethodInfo c;
-                if (com.FieldType == typeof(Reactive.ReactiveCommand))
-                    c = com.FieldType.GetMethod("Execute", BindingFlags.Public | BindingFlags.Instance, null,
+                if (com.PropertyType== typeof(Reactive.ReactiveCommand))
+                    c = com.PropertyType.GetMethod("Execute", BindingFlags.Public | BindingFlags.Instance, null,
                         Type.EmptyTypes, null);
                 else
-                    c = com.FieldType.GetMethod("Execute");
+                    c = com.PropertyType.GetMethod("Execute");
                 var parameters = c.GetParameters();
                if (parameters.Length == t.Length && c.GetCustomAttributes(typeof(ObsoleteAttribute), true).Length <= 0 && c.ReturnType == typeof(bool))
                {

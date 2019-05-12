@@ -87,19 +87,19 @@ namespace UnityMVVM.Binding
 
             if (!string.IsNullOrEmpty(ViewModelName))
             {
-                var props = ViewModelProvider.GetViewModelFields(ViewModelName);
+                var props = ViewModelProvider.GetViewModelProperties(ViewModelName);
                 SrcProps = props.Where(prop =>
-                        prop.FieldType.IsAssignableToGenericType(typeof(Reactive.ReactiveProperty<>))
+                        prop.PropertyType.IsAssignableToGenericType(typeof(Reactive.ReactiveProperty<>))
                         && !prop.GetCustomAttributes(typeof(ObsoleteAttribute), true)
                             .Any())
-                    .Select(e => new BindablePropertyInfo(e.Name, e.FieldType.IsGenericType ? e.FieldType.GetGenericArguments()[0].Name : e.FieldType.BaseType.GetGenericArguments()[0].Name)).ToList();
+                    .Select(e => new BindablePropertyInfo(e.Name, e.PropertyType.IsGenericType ? e.PropertyType.GetGenericArguments()[0].Name : e.PropertyType.BaseType.GetGenericArguments()[0].Name)).ToList();
                 SrcProps.AddRange(GetExtraViewModelProperties(props));
             }
         }
 
-        protected virtual IEnumerable<BindablePropertyInfo> GetExtraViewModelProperties(FieldInfo[] fields)
+        protected virtual IEnumerable<BindablePropertyInfo> GetExtraViewModelProperties(PropertyInfo[] props)
         {
-            return fields.Where(field => field.FieldType.IsAssignableToGenericType(typeof(Reactive.ReactiveCommand<>))
+            return props.Where(field => field.PropertyType.IsAssignableToGenericType(typeof(Reactive.ReactiveCommand<>))
                     && !field.GetCustomAttributes(typeof(ObsoleteAttribute), true)
                     .Any()
                     ).Select(e => new BindablePropertyInfo(e.Name, "Can Execute"));

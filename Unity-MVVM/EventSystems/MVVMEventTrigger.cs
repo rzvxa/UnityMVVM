@@ -396,11 +396,11 @@ namespace UnityMVVM.EventSystems
                 for (System.Type type = obj.GetType(); type != typeof(object) && type != null; type = type.BaseType)
                 {
                     // MethodInfo method = type.GetMethod(funcName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, (Binder)null, argumentTypes, (ParameterModifier[])null);
-                    var command = type.GetField(funcName);
-                    var isReactiveCommand = command.FieldType.GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IReactiveCommand<>));
+                    var command = type.GetProperty(funcName);
+                    var isReactiveCommand = command.PropertyType.GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IReactiveCommand<>));
                     if(!isReactiveCommand) continue;
 
-                    var method = command.FieldType.GetMethod("Execute", argumentTypes);
+                    var method = command.PropertyType.GetMethod("Execute", argumentTypes);
                     if (method == null) continue;
                     var parameters = method.GetParameters();
                     var flag = true;
@@ -443,7 +443,7 @@ namespace UnityMVVM.EventSystems
 
                 public string MethodName => _methodName;
 
-                private object TargetCommand => Target.GetType().GetField(MethodName).GetValue(Target);
+                private object TargetCommand => Target.GetType().GetProperty(MethodName).GetValue(Target);
 
                 public Action<BaseEventData> GetRuntimeCall(TriggerEvent te)
                 {

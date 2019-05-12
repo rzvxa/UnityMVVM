@@ -44,5 +44,25 @@ namespace Util
 
             return fi;
         }
+
+        public static PropertyInfo GetPropertyRecursive(this Type givenType, string propertyName, BindingFlags bindingFlags = BindingFlags.Instance | BindingFlags.NonPublic)
+        {
+            PropertyInfo pi = null;
+            while(givenType != null)
+            {
+                pi = givenType.GetProperty(propertyName, bindingFlags);
+
+                if(pi != null) break;
+
+                givenType = givenType.BaseType;
+            }
+
+            if (pi is null)
+            {
+                throw new Exception($"Property '{propertyName}' not found in type hierarchy.");
+            }
+
+            return pi;
+        }
     }
 }

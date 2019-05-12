@@ -246,8 +246,6 @@ MonoBehaviour:
     PropertyType: Color
   - PropertyName: Flagger
     PropertyType: Boolean
-  - PropertyName: ChangeColor
-    PropertyType: Can Execute
   DstProps:
   - PropertyName: sprite
     PropertyType: Sprite
@@ -1212,8 +1210,6 @@ MonoBehaviour:
     PropertyType: Color
   - PropertyName: Flagger
     PropertyType: Boolean
-  - PropertyName: ChangeColor
-    PropertyType: Can Execute
   DstProps:
   - PropertyName: sprite
     PropertyType: Sprite
@@ -1283,7 +1279,7 @@ MonoBehaviour:
   - eventID: 4
     callback:
       _calls:
-      - _mode: 1
+      - _mode: 3
         _arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1293,7 +1289,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         _callState: 2
         _target: {fileID: 0}
-        _methodName: ChangeColor
+        _methodName: TestCommand
         _vmName: UnityMVVM.Examples.ReactiveViewModel
       _typeName: 
       _eventId: 4
@@ -1535,8 +1531,6 @@ MonoBehaviour:
     PropertyType: Color
   - PropertyName: Flagger
     PropertyType: Boolean
-  - PropertyName: ChangeColor
-    PropertyType: Can Execute
   DstProps:
   - PropertyName: font
     PropertyType: Font
@@ -1676,8 +1670,6 @@ MonoBehaviour:
     PropertyType: Color
   - PropertyName: Flagger
     PropertyType: Boolean
-  - PropertyName: ChangeColor
-    PropertyType: Can Execute
   DstProps:
   - PropertyName: font
     PropertyType: Font
@@ -1728,8 +1720,8 @@ MonoBehaviour:
   - PropertyName: hideFlags
     PropertyType: HideFlags
   SrcPropertyName:
-    PropertyName: ChangeColor
-    PropertyType: Can Execute
+    PropertyName: BoolProp
+    PropertyType: Boolean
   DstPropertyName:
     PropertyName: color
     PropertyType: Color
@@ -1818,8 +1810,6 @@ MonoBehaviour:
     PropertyType: Color
   - PropertyName: Flagger
     PropertyType: Boolean
-  - PropertyName: ChangeColor
-    PropertyType: Can Execute
   DstProps:
   - PropertyName: font
     PropertyType: Font
@@ -1995,8 +1985,6 @@ MonoBehaviour:
     PropertyType: Color
   - PropertyName: Flagger
     PropertyType: Boolean
-  - PropertyName: ChangeColor
-    PropertyType: Can Execute
   DstProps:
   - PropertyName: sprite
     PropertyType: Sprite
@@ -2557,9 +2545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _viewModel: {fileID: 1669541576}
   ViewModelName: UnityMVVM.Examples.ReactiveViewModel
-  SrcCollections:
-  - PropertyName: TestCollection
-    PropertyType: DataModel
+  SrcCollections: []
   SrcCollectionName:
     PropertyName: TestCollection
     PropertyType: DataModel

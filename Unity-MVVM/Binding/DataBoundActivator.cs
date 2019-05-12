@@ -36,7 +36,7 @@ namespace UnityMVVM.Binding
             DstPropertyName = new BindablePropertyInfo(nameof(IsActive), IsActive.GetType().Name);
         }
 
-        protected override IEnumerable<BindablePropertyInfo> GetExtraViewModelProperties(FieldInfo[] fields)
+        protected override IEnumerable<BindablePropertyInfo> GetExtraViewModelProperties(PropertyInfo[] props)
         {
             return new BindablePropertyInfo[0];
         }

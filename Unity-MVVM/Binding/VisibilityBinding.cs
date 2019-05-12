@@ -10,7 +10,7 @@ namespace UnityMVVM.Binding
     {
         public override bool KeepConnectionAliveOnDisable => true;
 
-        protected override IEnumerable<BindablePropertyInfo> GetExtraViewModelProperties(FieldInfo[] fields)
+        protected override IEnumerable<BindablePropertyInfo> GetExtraViewModelProperties(PropertyInfo[] props)
         {
             return new BindablePropertyInfo[0];
         }
